@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TaskHub.API/TaskHub.API.csproj" />
+    <Project Path="src/TaskHub.Application/TaskHub.Application.csproj" />
+    <Project Path="src/TaskHub.Domain/TaskHub.Domain.csproj" />
+    <Project Path="src/TaskHub.Infrastructure/TaskHub.Infrastructure.csproj" />
+  </Folder>
+</Solution>
