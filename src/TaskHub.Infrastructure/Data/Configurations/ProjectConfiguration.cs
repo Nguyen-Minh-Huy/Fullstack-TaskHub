@@ -35,8 +35,7 @@ public class ProjectConfiguration : IEntityTypeConfiguration<Project>
 
         builder.Property(p => p.Status)
             .HasColumnName("status")
-            .HasColumnType("tinyint")
-            .HasDefaultValue(0);
+            .HasConversion<byte>();
 
         builder.Property(p => p.CreatedAt)
             .HasColumnName("created_at")

@@ -39,7 +39,7 @@ public class TaskItemConfiguration : IEntityTypeConfiguration<TaskItem>
 
         builder.Property(t => t.TaskPriority)
             .HasColumnName("task_priority")
-            .HasColumnType("tinyint");
+            .HasConversion<byte>();
 
         builder.Property(t => t.IsCompleted)
             .HasColumnName("IsCompleted")
@@ -51,8 +51,7 @@ public class TaskItemConfiguration : IEntityTypeConfiguration<TaskItem>
 
         builder.Property(t => t.Status)
             .HasColumnName("status")
-            .HasColumnType("tinyint")
-            .HasDefaultValue(0);
+            .HasConversion<byte>();
 
         builder.Property(t => t.CreatedAt)
             .HasColumnName("created_at")
