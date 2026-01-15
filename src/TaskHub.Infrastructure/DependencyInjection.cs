@@ -1,9 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TaskHub.Application.Interfaces;
 using TaskHub.Domain.Interfaces;
 using TaskHub.Infrastructure.Data;
 using TaskHub.Infrastructure.Repositories;
+using TaskHub.Infrastructure.Services;
 using TaskHub.Infrastructure.Settings;
 
 namespace TaskHub.Infrastructure;
@@ -29,6 +31,9 @@ public static class DependencyInjection
 
         // Add Unit of Work
         services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+        // Add Services
+        services.AddScoped<IJwtService, JwtService>();
 
         // Add JwtSettings
         services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));
